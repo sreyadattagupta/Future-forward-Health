@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MedSev</title>
+  <script srd="index.js"></script>
+  <style>
+    body {
+      padding-top: 80px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 10px;
+      background-color: rgb(254, 97, 90);
+      color: rgb(0, 0, 0);
+      position: fixed;
+      top: 0%;
+      width: 100%;
+    }
+
+    .gapInNav {
+      display: flex;
+    }
+
+    .gapInNav li {
+      list-style: none;
+    }
+
+    .removeUnderLine {
+      text-decoration: none;
+      font-size: 20px;
+      margin-inline: 20px;
+      color: wheat;
+    }
+
+    .removeUnderLine:hover {
+      color: aqua;
+      text-decoration: underline;
+    }
+
+    .removeDots {
+      list-style: none;
+    }
+
+    .logo {
+      font-size: 22px;
+    }
+
+    .homePage {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      background-color: rgb(35, 64, 142);
+      color: wheat;
+      height: 600px;
+      width: 100%;
+    }
+
+    .homePageText {
+      padding-left: 70px;
+      font-size: 20px;
+    }
+
+    .checkSchedule {
+      text-align: center;
+      height: 600px;
+      background-color: rgb(51, 149, 210);
+    }
+
+    .checkSchedule h1 {
+      margin: 0;
+      padding-top: 15px;
+    }
+
+    .button {
+      background: radial-gradient(circle, rgb(206, 23, 23), rgb(176, 18, 18));
+      color: rgb(250, 247, 247);
+      border: none;
+      height: 100px;
+      width: 200px;
+      border-radius: 50% 50% 20% 20% / 10% 10% 30% 30%;
+      cursor: pointer;
+      font-size: 24px;
+      transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.3s ease-in-out;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .button:hover {
+      background: radial-gradient(circle, rgb(176, 18, 18), rgb(206, 23, 23));
+      color: rgb(255, 255, 255);
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    .button:active {
+      background: rgb(150, 123, 73);
+      color: rgb(5, 5, 5);
+      transform: scale(0.95);
+      box-shadow: none;
+    }
+
+
+
+    .buttonRow1 {
+      padding-top: 80px;
+    }
+
+    .buttonRow2 {
+      padding-top: 50px;
+    }
+
+    .buttonRow3 {
+      padding-top: 50px;
+    }
+
+    .availability {
+      text-align: center;
+      height: 500px;
+      background-color: rgb(35, 212, 228);
+    }
+
+    .availability h1 {
+      margin: 0;
+    }
+
+    .buttonA {
+      background: linear-gradient(to right, rgb(100, 82, 143), rgb(76, 60, 129));
+      color: rgb(250, 247, 247);
+      border: none;
+      height: 80px;
+      width: 200px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 18px;
+      transition: background 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .buttonA:hover {
+      background: linear-gradient(to right, rgb(76, 60, 129), rgb(100, 82, 143));
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+
+
+
+
+    .buttonRow11 {
+      padding-top: 45px;
+    }
+
+    .buttonRow22 {
+      padding-top: 50px;
+    }
+
+    .buttonRow33 {
+      padding-top: 50px;
+    }
+
+    .beds h1 {
+      margin: 0;
+      padding-top: 20px;
+    }
+
+    .beds {
+      display: grid;
+      text-align: center;
+      height: 465px;
+      background-color: rgb(100, 188, 196);
+      padding-top: 20px;
+      margin: 0;
+    }
+
+    .icudetails {
+      display: grid;
+      font-size: 30px;
+    }
+
+    .ambulance h1 {
+      margin: 0;
+      padding-top: 10px;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+    }
+
+    .container {
+      width: 80%;
+      margin: auto;
+      overflow: hidden;
+    }
+
+    form {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      margin: 10px 0;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    input[type="submit"] {
+      background-color: #333;
+      color: #fff;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #555;
+    }
+
+    .bookingpagesize {
+      height: 400px;
+    }
+
+
+    .booking {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: rgb(126, 190, 196);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 400px;
+      height: 100%;
+    }
+
+    header {
+      background-color: gray;
+      color: #f8f8f8;
+      text-align: center;
+      padding: 15px;
+    }
+
+    .container {
+      width: 80%;
+      margin: auto;
+      overflow: hidden;
+    }
+
+    form {
+      background-color: rgb(126, 190, 196);
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px black;
+    }
+
+    label {
+      display: block;
+      margin: 10px 0;
+      font-weight: bold;
+      color: black;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #541a1a;
+      border-radius: 4px;
+    }
+
+    input[type="submit"] {
+      background-color: #3498db;
+      color: #ffffff;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #2980b9;
+    }
+
+    .contact {
+      background-color: #ffffff;
+      padding: 20px;
+      margin: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .contactHeading {
+      color: #333333;
+    }
+
+    .contactImg img {
+      width: 100px;
+      margin-right: 10px;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      color: #555555;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    input[type="submit"] {
+      background-color: #4caf50;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+
+    .aboutUs {
+      display: grid;
+      text-align: center;
+      height: 200px;
+      background-color: rgb(118, 116, 116);
+      padding-top: 20px;
+      margin: 0;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <div>
+    <nav>
+      <div class="logo">
+        <h1> MedSev</h1>
+      </div>
+      <i id="bar" class="fa-solid fa-bars"></i>
+      <ul class="gapInNav">
+        <li class="removeDots"><a class="removeUnderLine" href="">Home</a></li>
+        <li class="removeDots"><a class="removeUnderLine" href="#doctor">Doctor list</a></li>
+        <li class="removeDots"><a class="removeUnderLine" href="#Availability">Available Doctors</a></li>
+        <li class="removeDots"><a class="removeUnderLine" href="#Beds Availability">ICU Beds</a></li>
+        <li class="removeDots"><a class="removeUnderLine" href="#Ambulance">Book Ambulance</a></li>
+        <li class="removeDots"><a class="removeUnderLine" href="#patient">Patient Reviews</a></li>
+        <li class="removeDots"><a class="removeUnderLine" href="#contact">About us</a></li>
+      </ul>
+    </nav>
+  </div>
+
+
+
+
+
+  <div class="homePage">
+    <div class="homePageText">
+      <h1><i>One Step Forward<br>
+          For Your Beloved One's Health</i></h1>
+      <h3>We are always there for you</h3>
+    </div>
+    <img src="home_page_image.png" alt="">
+  </div>
+
+
+
+  <div class="checkSchedule">
+    <h1 id="doctor">Check Doctor's Schedule</h1>
+    <div class="buttonRow1">
+      <a href="https://www.ipgmer.gov.in/pdf/opd_schedule/BIN-OPD-Schedule.pdf" target="_blank">
+        <button class="button">Sunday</button></a>
+      <a href="https://www.ipgmer.gov.in/pdf/opd_schedule/BIN-OPD-Schedule.pdf" target="_blank">
+        <button class="button">Monday</button></a>
+      <a href="https://www.ipgmer.gov.in/pdf/opd_schedule/BIN-OPD-Schedule.pdf" target="_blank">
+        <button class="button">Tuesday</button></a>
+      <a href="https://www.ipgmer.gov.in/pdf/opd_schedule/BIN-OPD-Schedule.pdf" target="_blank">
+        <button class="button">Thursday</button></a>
+    </div>
+    <div class="buttonRow2">
+      <a href="https://www.ipgmer.gov.in/pdf/opd_schedule/BIN-OPD-Schedule.pdf" target="_blank">
+        <button class="button">Wednesday</button></a>
+      <a href="https://www.ipgmer.gov.in/pdf/opd_schedule/BIN-OPD-Schedule.pdf" target="_blank">
+        <button class="button">Friday</button></a>
+      <a href="https://www.ipgmer.gov.in/pdf/opd_schedule/BIN-OPD-Schedule.pdf" target="_blank">
+        <button class="button">Saturday</button></a>
+    </div>
+  </div>
+
+
+
+
+
+
+
+  <div class="Beds Availability">
+    <h1 id="Availability">Doctor's Availability</h1>
+    <div class="buttonRow11">
+      <a href="doctorAvailability.html" target="_blank">
+        <button class="buttonA">Cardiology</button></a>
+      <a href="doctorAvailability.html" target="_blank">
+        <button class="buttonA">Dermatology</button></a>
+      <a href="doctorAvailability.html" target="_blank">
+        <button class="buttonA">Endocrinology</button></a>
+      <a href="doctorAvailability.html" target="_blank">
+        <button class="buttonA">Gastroenterology</button></a>
+      <a href="doctorAvailability.html" target="_blank">
+        <button class="buttonA">Hematology</button></a>
+      <a href="doctorAvailability.html" target="_blank">
+        <button class="buttonA">Neurology</button></a>
+
+    </div>
+    <div class="buttonRow22">
+      <a href="doctorAvailability.html" target="_blank">
+        <button class="buttonA">Ophthalmology</button></a>
+      <a href="doctorAvailability.html" target="_blank">
+        <button class="buttonA">Orthopedics</button></a>
+      <a href="doctorAvailability.html" target="_blank">
+        <button class="buttonA">Otolaryngology </button></a>
+      <a href="doctorAvailability.html" target="_blank">
+        <button class="buttonA">Pediatrics</button></a>
+      <a href="doctorAvailability.html" target="_blank">
+        <button class="buttonA">Psychiatry</button></a>
+      <a href="doctorAvailability.html" target="_blank">
+        <button class="buttonA">Pulmonology</button></a>
+    </div>
+    <div class="buttonRow33">
+      <a href="doctorAvailability.html" target="_blank">
+        <button class="buttonA">Radiology</button></a>
+      <a href="doctorAvailability.html" target="_blank">
+        <button class="buttonA">Nephrology</button></a>
+      <a href="doctorAvailability.html" target="_blank">
+        <button class="buttonA">Infectious Diseases</button></a>
+      <a href="doctorAvailability.html" target="_blank">
+        <button class="buttonA">Obstetrics and Gynecology</button></a>
+      <a href="doctorAvailability.html" target="_blank">
+        <button class="buttonA">Anesthesiology</button></a>
+      <a href="doctorAvailability.html" target="_blank">
+        <button class="buttonA">Emergency Medicine</button></a>
+    </div>
+  </div>
+
+
+  <div class="beds">
+    <h1 id="Emergency Ward">Emergency Ward details</h1>
+    <div class="icudetails">
+      <a href="icuBeds.html" target="_blank">
+        Standard ICU Bed
+      </a>
+      <a href="icuBeds.html" target="_blank">
+        Electric ICU Bed
+      </a>
+      <a href="icuBeds.html" target="_blank">
+        Critical Care Bed
+      </a>
+      <a href="icuBeds.html" target="_blank">
+        Low Air Loss ICU Bed
+      </a>
+      <a href="icuBeds.html" target="_blank">
+        Hybrid ICU Beds
+      </a>
+      <a href="icuBeds.html" target="_blank">
+        ICU Cots or Convertible Beds
+      </a>
+    </div>
+  </div>
+  </div>
+
+
+
+
+  <div class="booking">
+    <header>
+    <h1 id="Ambulance Bo"> Booking</h1>
+    </header>
+
+    <div class="container">
+      <form action="#" method="post">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Your Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Your Phone:</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <label for="pickup">Pickup Location:</label>
+        <input type="text" id="pickup" name="pickup" required>
+
+        <label for="destination">Destination:</label>
+        <input type="text" id="destination" name="destination" required>
+
+        <input type="submit" value="Book Ambulance">
+      </form>
+    </div>
+  </div>
+
+
+
+
+
+
+
+  <div class="contact">
+    <div>
+      <h1 id="patient" class="contactHeading">Patient Feedback</h1>
+      <div>
+        <div class="contactImg">
+          <img src="cm1.png" alt="">
+          <img src="cm2.png" alt="">
+          <img src="cm3.png" alt="">
+        </div>
+        <label for="myTextBox">Give Us Feedback</label>
+        <input type="text" id="myTextBox" name="myTextBox">
+        <input type="submit" value="Submit">
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="aboutUs">
+    <h1 id="contact">About Us</h1>
+    <div>
+      <p>
+        Welcome to [Hospital Name], where compassionate care meets cutting-edge medicine.
+        As a beacon of health and healing in our community, we pride ourselves on delivering
+        exceptional healthcare with a personalized touch. Our dedicated team of skilled professionals,
+        from renowned doctors to compassionate nurses, is committed to your well-being. With state-of-the-art
+        facilities and advanced medical technologies, we provide comprehensive services across various
+        specialties. At [Hospital Name], we prioritize patient comfort, safety, and satisfaction.
+        Our mission is to empower individuals on their journey to optimal health through innovative
+        treatments and a patient-centric approach. Trust us to be your partner in health – your well-being is
+        our top priority.
+      </p>
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+
+</body>
+
+</html>

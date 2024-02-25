@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doctor Availability</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #3498db, #2c3e50); /* Gradient background */
+      color: #fff;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    h1 {
+      color: #e74c3c; /* Red color for the header */
+    }
+
+    .doctor-list {
+      list-style-type: none;
+      padding: 0;
+      margin: 20px 0;
+    }
+
+    .txt,
+    .available,
+    .unavailable {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    
+    .available {
+      color: #2ecc71; /* Emerald green color for availability */
+      background-color: transparent; /* Dark green background */
+      padding: 10px;
+      border-radius: 8px;
+      transition: background-color 0.3s ease-in-out;
+    }
+    
+    .available:hover {
+      background-color: #219653; /* Slightly darker green on hover */
+    }
+
+    .unavailable {
+      color: #e74c3c; /* Alizarin red color for unavailability */
+      background-color: #c0392b; /* Dark red background */
+      padding: 10px;
+      border-radius: 8px;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    .unavailable:hover {
+      background-color: #922b21; /* Slightly darker red on hover */
+    }
+  </style>
+</head>
+<body>
+  <h1 class="txt">Doctor Availability Status</h1>
+  <ul class="doctor-list">
+    <li class="available">Dr. Sharma - Available</li>
+    <li class="unavailable">Dr. Patel - Unavailable</li>
+    <li class="available">Dr. Gupta - Available</li>
+    <li class="available">Dr. Verma - Available</li>
+    <li class="unavailable">Dr. Kapoor - Unavailable</li>
+    <li class="available">Dr. Singh - Available</li>
+    <li class="unavailable">Dr. Kumar - Unavailable</li>
+    <li class="available">Dr. Tiwari - Available</li>
+    <li class="unavailable">Dr. Joshi - Unavailable</li>
+    <li class="available">Dr. Reddy - Available</li>
+    <li class="unavailable">Dr. Desai - Unavailable</li>
+    <li class="available">Dr. Mishra - Available</li>
+    <li class="unavailable">Dr. Sharma - Unavailable</li>
+    <li class="available">Dr. Yadav - Available</li>
+    <li class="available">Dr. Malhotra - Available</li>
+    <li class="unavailable">Dr. Choudhary - Unavailable</li>
+    <li class="available">Dr. Kumar - Available</li>
+    <li class="unavailable">Dr. Nair - Unavailable</li>
+    <li class="available">Dr. Prasad - Available</li>
+    <li class="unavailable">Dr. Iyer - Unavailable</li>
+  </ul>
+</body>
+</html>
